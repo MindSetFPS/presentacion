@@ -1,433 +1,191 @@
----
-# try also 'default' to start simple
-theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
-# apply any unocss classes to the current slide
-class: 'text-center'
-# some information about the slides, markdown enabled
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
-transition: slide-left
-title: Welcome to Slidev
-mdc: true
----
-
-# Welcome to Slidev
-
-Presentation slides for developers
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" flex="~ justify-center items-center gap-2" hover="bg-white bg-opacity-10">
-    Press Space for next page <div class="i-carbon:arrow-right inline-block"/>
-  </span>
-</div>
-
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <div class="i-carbon:edit" />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub" title="Open in GitHub"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
----
-transition: fade-out
----
-
-# What is Slidev?
-
-Slidev is a slide maker and accompanying presentation tool designed for developers. It consists of the following features:
-
-- 📝 **Text-based** - focus on the content with Markdown, and apply styles later
-- 🎨 **Themable** - themes can be shared and used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your slides
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-
-<br>
-<br>
-
-Read more about Slidev in [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tags in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
--->
-
----
-layout: default
----
-
-# Table of contents
-
-```html
-<Toc minDepth="1" maxDepth="1"></Toc>
-```
-
-<Toc maxDepth="1"></Toc>
-
----
-transition: slide-up
-level: 2
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's control panel, [learn more](https://sli.dev/guide/navigation.html)
-
-## Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://cover.sli.dev
----
-
-# Code
-
-Use code snippets and get automatic highlighting, and even types hover![^1]
-
-```ts {all|5|7|7-8|10|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-
-import { computed, ref } from 'vue'
-
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
-
-doubled.value = 2
-```
-
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-<!-- <<< @/snippets/external.ts#snippet -->
-
-<!-- Footer -->
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. Adding your own custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter notes with **bold**, *italic*, and ~~strike~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switch between themes on a per-slide basis with just **one change** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/guide/theme-addon#use-theme) and
-check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
+  <!-- Imagen de fondo -->
+
+<img 
+    src="https://images.unsplash.com/photo-1664526937033-fe2c11f1be25?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1332" 
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- Overlay oscuro -->
+  <div class="absolute inset-0 bg-black opacity-30"></div>
+
+  <!-- Contenido encima -->
+  <div class="relative z-10 text-white">
+    <h1 class=" text-center text-6xl font-bold ">Arquitectura de Cebolla</h1>
+    <h2 class=" text-center text-4xl mt-5">(Onion Architecture)</h2>
+
+<div class="pt-6">
+      <span
+        @click="$slidev.nav.next"
+        class="continue-btn flex justify-center items-center gap-2 text-lg"
+      >
+        Presiona <kbd>Espacio</kbd> para continuar
+        <div class="i-carbon:arrow-right inline-block"></div>
+      </span>
+    </div>
   </div>
 
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
+---
+
+# ¿Qué es la Arquitectura de Cebolla?
+
+- Propuesta por **Jeffrey Palermo** 🧑‍💻
+- Se basa en **capas concéntricas** (como una cebolla)
+- Busca **separar responsabilidades** (Separation of Concerns)
+- Invierte el flujo de dependencias tradicional
+
+> 💡 El **núcleo (Dominio)** no depende de nada externo. Las capas externas dependen de las internas.
+> ![Computadora encendida](https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170){.rounded .shadow-lg .w-12 .h-12 object-cover}
+
+---
+
+<div class="slidev-slide flex flex-row justify-between items-center h-screen w-full text-left">
+  <!-- Columna izquierda: texto -->
+  <div class="w-1/2 pb-30">
+    <h1 class="text-4xl font-bold mb-2">El Problema que Resuelve</h1>
+    <ul class="list-disc list-inside text-lg ">
+      <li><strong>Acoplamiento Fuerte:</strong> En arquitecturas tradicionales, la lógica de negocio (el "cómo") suele estar mezclada con la infraestructura (BD, APIs, Frameworks).</li>
+      <li><strong>Dificultad para Probar:</strong> Es difícil probar la lógica de negocio sin levantar una base de datos o un servidor web.</li>
+      <li><strong>Mantenimiento Complejo:</strong> Un cambio en la base de datos puede forzar cambios en la lógica de negocio.</li>
+    </ul>
+  </div>
+
+  <!-- Columna derecha: imagen -->
+  <div class="w-1/2 flex justify-center">
+    <img 
+      src="https://images.unsplash.com/photo-1615454782617-e69bbd4f2969?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1128" 
+      alt="Representación del núcleo" 
+      class="rounded shadow-lg w-200 h-200 object-cover ml-28"
+    />
   </div>
 </div>
 
-<!-- vue script setup scripts can be directly used in markdown, and will only affect the current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
+---
 
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
+<div class="slidev-slide flex flex-row justify-between items-start h-screen w-full text-left ">
+  <!-- Columna derecha: imagen -->
+  <div class="w-1/2 flex justify-center">
+    <img 
+      src="https://images.unsplash.com/vector-1761074651005-97a2e57eef29?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1172" 
+      alt="Principios de Onion Architecture" 
+      class="rounded  w-140 h-130 object-cover mr-30"
+    />
+  </div>
 
-[Learn More](https://sli.dev/guide/animations.html#motion)
+  <!-- Columna izquierda: texto -->
+  <div class="w-1/2 pt-10">
+    <h1 class="text-4xl font-bold mb-4">Principios Básicos</h1>
+    <ul class="list-disc list-inside text-lg space-y-2">
+      <li>🧩 <strong>Independencia de Frameworks:</strong> El núcleo no sabe qué framework UI o de BD se usa.</li>
+      <li>🧪 <strong>Alta Capacidad de Pruebas (Testability):</strong> El dominio se puede probar de forma aislada.</li>
+      <li>🧲 <strong>Inversión de Dependencias:</strong> Todas las dependencias fluyen hacia el centro.</li>
+      <li>🧭 <strong>Separación de Responsabilidades:</strong> Cada capa tiene un único propósito.</li>
+    </ul>
+    <p class="mt-4 italic">El código del Dominio (Core) debe ser "puro", sin referencias externas.</p>
+  </div>
+</div>
+
+---
+
+<div class="slidev-slide flex flex-row justify-between items-start h-screen w-full text-left">
+  <!-- Columna izquierda: lista de capas -->
+  <div class="w-1/2 ">
+    <h1 class="text-2xl font-bold">Estructura de Capas</h1>
+    <ol class="list-decimal list-inside text-lg">
+      <li>
+        <strong>Dominio (Core)</strong>
+        <ul class="list-disc list-inside ml-4">
+          <li>Entidades del negocio (Ej: <strong>Pedido</strong>, <strong>Cliente</strong>)</li>
+          <li>Reglas de negocio puras</li>
+          <li><strong>Interfaces</strong> de repositorios (Ej: <strong>IPedidoRepository</strong>)</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Aplicación</strong>
+        <ul class="list-disc list-inside ml-4">
+          <li>Casos de uso (Ej: <strong>CrearPedidoUseCase</strong>)</li>
+          <li>Lógica de la aplicación (orquestación)</li>
+          <li>Depende del Dominio</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Infraestructura y Presentación (Capas Externas)</strong>
+        <ul class="list-disc list-inside ml-4">
+          <li>UI, API REST, Controladores</li>
+          <li>Implementaciones de Repositorios (Ej: <strong>PedidoRepositorySQL</strong>)</li>
+          <li>Servicios externos, SDKs</li>
+          <li>Dependen de la Aplicación</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+
+  <!-- Columna derecha: imagen -->
+  <div class="w-1/2 flex justify-center">
+    <img 
+      src="https://plus.unsplash.com/premium_vector-1734127305687-4440bad6d7a7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1025" 
+      alt="Arquitectura en capas" 
+      class="rounded shadow-lg w-120 h-130 object-cover ml-27"
+    />
+  </div>
+</div>
+
+
+---
+
+<div class="slidev-slide flex flex-col justify-start items-center h-screen w-full text-left px-16 pt-6">
+
+  <!-- Título arriba -->
+  <h1 class="text-4xl font-bold mb-10 text-center w-full">🧾 Ejemplo: Sistema de Pedidos</h1>
+
+  <!-- Contenedor de las dos columnas -->
+  <div class="flex flex-row justify-between items-start w-full gap-">
+    <div class="w-1/2 max-w-[48%]">
+      <h2 class="text-2xl font-semibold mb-2">Dominio</h2>
+      <ul class="list-disc list-inside text-lg ml-4">
+        <li>Entidad <code>Pedido</code></li>
+        <li>Interface <code>IPedidoRepository</code> (con método <code>Guardar(Pedido p)</code>)</li>
+        <li>Caso de Uso <code>RegistrarPedido(datos)</code></li>
+        <li>Llama a <code>IPedidoRepository.Guardar(...)</code></li>
+      </ul>
+    </div>
+    <div class="w-1/2 max-w-[48%]">
+      <h2 class="text-2xl font-semibold mb-2">Infraestructura</h2>
+      <ul class="list-disc list-inside text-lg ml-4">
+        <li><code>&lt;PedidoRepositorySQL&gt;</code> (implementa <code>&lt;IPedidoRepository&gt;</code>)</li>
+        <li>Usa Entity Framework o SQL puro para guardar en la BD</li>
+      </ul>
+      <h2 class="text-2xl font-semibold mt-6 mb-2">Presentación</h2>
+      <ul class="list-disc list-inside text-lg ml-4">
+        <li><code>&lt;PedidosController&gt;</code> (API REST)</li>
+        <li>Recibe el JSON, llama al Caso de Uso <code>&lt;RegistrarPedido&gt;</code></li>
+      </ul>
+    </div>
+
+  </div>
 
 </div>
 
 ---
 
-# LaTeX
+# Ventajas vs. Desventajas
 
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
+<div class="col-left mt-10">
 
-<br>
+## Ventajas
 
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectivness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
+- **Mantenible:** Código limpio y desacoplado
+- **Testable:** Pruebas unitarias fáciles para el Dominio y la Aplicación (puedes "mockear" la infraestructura)
+- **Flexible:** Fácil cambiar la base de datos (de SQL a Mongo) o la UI (de Web a App Móvil) sin tocar el núcleo
+- **Escalable:** Las responsabilidades claras ayudan a crecer
 
 </div>
 
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
+<div class="col-right mt-10">
 
----
-layout: center
-class: text-center
----
+## Desventajas
 
-# Learn More
+- **Complejidad Inicial:** Más "ceremonia" o archivos (clases, interfaces) al principio
+- **Curva de Aprendizaje:** Requiere entender bien la Inyección de Dependencias
+- **Excesivo (Overhead):** Puede ser demasiado para proyectos muy pequeños o simples (Ej: un CRUD simple)
 
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+</div>
