@@ -1,18 +1,28 @@
 ---
 layout: cover
+background: https://www.fc-gruppe.de/fileadmin/media/1_Leistungen/1-4_Entwickeln/medien/Softwarearchitektur_dark_.jpg
+backgroundDimmmer: 0.3
+---
+
+# Arquitecturas de estilo centrado en dominio
+
+- Onion Architecture
+- Clean Architecture
+- Arquitectura Hexagonal
+- Domain-Driven Design
+
+### Daniel Iván Escobar Vasquez
+### Ricardo
+### Derrapin Twitch
+
+---
+layout: cover
 background: https://images.unsplash.com/photo-1664526937033-fe2c11f1be25?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1332
 backgroundDimmer: 0.3
 ---
 
 # Arquitectura de Cebolla
 ## (Onion Architecture)
-
-<div class="pt-6">
-  <span class="flex justify-center items-center gap-2">
-    Presiona <kbd>Espacio</kbd> para continuar
-    <i-carbon-arrow-right />
-  </span>
-</div>
 
 ---
 
@@ -49,8 +59,6 @@ layout: two-cols
 ---
 layout: two-cols
 ---
-
-::left::
 
 <div class="flex justify-center items-center h-full">
   <img 
