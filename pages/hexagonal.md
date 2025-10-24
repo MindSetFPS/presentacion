@@ -64,10 +64,15 @@ Son interfaces que el núcleo requiere para conectarse a servicios externos que 
 </div>
 <div>
 
-<img src="/ImagesClean/aplica.png" alt="Aplicaciones" style="height: 400px; width: auto; margin: auto;"/>
 
 </div>
 </div>
+
+---
+
+# Ejemplo
+
+<img src="/ImagesClean/image.png" alt="Aplicaciones" style="height: auto; width: auto; margin: auto;"/>
 
 ---
 
