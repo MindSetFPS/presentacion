@@ -39,7 +39,7 @@ class: text-center
 </v-clicks>
 
 <div v-click class="mt-8 flex justify-center">
-  <img src="./ImagesClean/Introduccion%20a%20CleanArchitecture.jpeg" style="max-width: 45%; height: auto;" />
+  <img src="../ImagesClean/Introduccion%20a%20CleanArchitecture.jpeg" style="max-width: 45%; height: auto;" />
 </div>
 
 
@@ -49,7 +49,7 @@ layout: two-cols
 
 # Estructura por Capas 
 
-<img src="./ImagesClean/Estructura%20del%20proyecto.jpeg" style="width:400%; height:auto;" />
+<img src="../ImagesClean/Estructura%20del%20proyecto.jpeg" style="width:400%; height:auto;" />
 
 
 
@@ -73,19 +73,19 @@ layout: default
 
 <div class="grid grid-cols-2 gap-x-6 gap-y-8 justify-items-center mt-8">
   <div class="flex flex-col items-center">
-    <img src="./ImagesClean/api.png" class="object-contain max-h-48" alt="API Layer" />
+    <img src="../ImagesClean/api.png" class="object-contain max-h-48" alt="API Layer" />
     <p class="text-sm mt-2 font-bold text-center">API/Presentación</p>
   </div>
   <div class="flex flex-col items-center">
-    <img src="./ImagesClean/domain.png" class="object-contain max-h-48" alt="Domain Layer" />
+    <img src="../ImagesClean/domain.png" class="object-contain max-h-48" alt="Domain Layer" />
     <p class="text-sm mt-2 font-bold text-center">Dominio</p>
   </div>
   <div class="flex flex-col items-center">
-    <img src="./ImagesClean/aplica.png" class="object-contain max-h-48" alt="Application Layer" />
+    <img src="../ImagesClean/aplica.png" class="object-contain max-h-48" alt="Application Layer" />
     <p class="text-sm mt-2 font-bold text-center">Aplicación</p>
   </div>
   <div class="flex flex-col items-center">
-    <img src="./ImagesClean/infrastructure.png" class="object-contain max-h-48" alt="Infrastructure Layer" />
+    <img src="../ImagesClean/infrastructure.png" class="object-contain max-h-48" alt="Infrastructure Layer" />
     <p class="text-sm mt-2 font-bold text-center">Infraestructura</p>
   </div>
 </div>
@@ -172,8 +172,8 @@ Las dependencias SIEMPRE apuntan hacia adentro
 
 ### ✅ Correcto
 
-<img src="./ImagesClean/reglasdedependencia.jpeg" class="object-contain max-h-64 mx-auto" alt="Reglas de Dependencia" />
 
+<img src="../ImagesClean/reglasdedependencia.jpeg" class="object-contain max-h-64 mx-auto" alt="Reglas de Dependencia" />
 </div>
 
 <div v-click>
